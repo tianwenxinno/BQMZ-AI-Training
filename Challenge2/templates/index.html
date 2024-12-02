@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="mt-5">Image Processing Tool</h1>
+<form action="/upload" method="post" enctype="multipart/form-data" class="mt-4">
+    <div class="form-group">
+        <label for="file">Upload Image:</label>
+        <input type="file" class="form-control-file" id="file" name="file" accept="image/*">
+    </div>
+    <div class="form-group">
+        <label for="crop">Crop (left,top,right,bottom):</label>
+        <input type="text" class="form-control" id="crop" name="crop" placeholder="0,0,800,800">
+    </div>
+    <div class="form-group">
+        <label for="rotate">Rotate (angle):</label>
+        <input type="number" class="form-control" id="rotate" name="rotate" placeholder="90">
+    </div>
+    <div class="form-group">
+        <label for="brightness">Brightness (0.0 to 2.0):</label>
+        <input type="number" step="0.1" class="form-control" id="brightness" name="brightness" placeholder="1.0">
+    </div>
+    <div class="form-group">
+        <label for="contrast">Contrast (0.0 to 2.0):</label>
+        <input type="number" step="0.1" class="form-control" id="contrast" name="contrast" placeholder="1.0">
+    </div>
+    <div class="form-group">
+        <label for="watermark">Watermark Text:</label>
+        <input type="text" class="form-control" id="watermark" name="watermark" placeholder="Your Watermark">
+    </div>
+    <button type="submit" class="btn btn-primary">Process Image</button>
+</form>
+{% endblock %}
