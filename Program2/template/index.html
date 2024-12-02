@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>简单前后端交互示例</title>
+</head>
+<body>
+    <h1>欢迎！请输入您的名字：</h1>
+    <form id="nameForm">
+        <input type="text" id="nameInput" placeholder="你的名字" required />
+        <button type="submit">发送</button>
+    </form>
+    <p id="response"></p>
+
+    <script>
+        document.getElementById('nameForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // 阻止表单默认提交行为
+
+            const name = document.getElementById('nameInput').value;
+            fetch('/greet', { // 发送POST请求到服务器
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ name: name })
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('response').textContent = data.message;
+            });
+        });
+    </script>
+</body>
+</html>
