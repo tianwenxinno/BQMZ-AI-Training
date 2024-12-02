@@ -1,0 +1,23 @@
+.task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.completed {
+    text-decoration: line-through;
+}
+
+.priority-high {
+    color: red;
+}
+
+.priority-medium {
+    color: orange;
+}
+
+.priority-low {
+    color: green;
+}
