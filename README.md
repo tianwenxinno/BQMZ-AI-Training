@@ -1,1 +1,1 @@
-# BQMZAITraining
+# BQMZ-AI-Training
