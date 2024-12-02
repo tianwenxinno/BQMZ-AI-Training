@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="mt-5">Processed Image</h1>
+<div class="row mt-4">
+    <div class="col-md-6">
+        <h2>Original Image</h2>
+        <img src="{{ url_for('serve_image', filename=original) }}" class="img-fluid" alt="Original Image">
+    </div>
+    <div class="col-md-6">
+        <h2>Processed Image</h2>
+        <img src="{{ url_for('serve_image', filename=result) }}" class="img-fluid" alt="Processed Image">
+    </div>
+</div>
+<a href="/" class="btn btn-secondary mt-4">Back to Home</a>
+{% endblock %}
